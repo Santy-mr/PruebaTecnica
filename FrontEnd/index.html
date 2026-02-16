@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">
+            <i class="bi bi-people-fill"></i> Gestión de Usuarios
+        </h1>
+
+        <div class="row">
+            <div class="col-lg-5 mb-4">
+                <div class="card">
+                    <h2><i class="bi bi-person-plus-fill"></i> Crear Nuevo Usuario</h2>
+                    <form id="userForm">
+                        <div class="form-group mb-3">
+                            <label for="user" class="form-label">Usuario:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="user" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="passw" class="form-label">Contraseña:</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="passw" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="name" class="form-label">Nombre:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="name" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="lastName" class="form-label">Apellido:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="lastName" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="idRole" class="form-label">Rol:</label>
+                            <div class="input-group">
+                                <select class="form-select" id="idRole" required>
+                                    <option value="">Seleccionar rol</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Usuario</option>
+                                    <option value="3">Supervisor</option>
+                                    <option value="4">Gerente</option>
+                                    <option value="5">Soporte</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="status" class="form-label">Estado:</label>
+                            <div class="input-group">
+                                <select class="form-select" id="status" required>
+                                    <option value="">Seleccionar estado</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Baja">Baja</option>
+                                    <option value="Suspensión">Suspensión</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn w-100">Crear Usuario</button>
+                    </form>
+                    <div id="message"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="mb-0">
+                            <i class="bi bi-list-ul"></i> Lista de Usuarios
+                        </h2>
+                        <button onclick="loadUsers()" class="btn btn-secondary">
+                            <i class="bi bi-arrow-clockwise"></i> Recargar Lista
+                        </button>
+                    </div>
+                    <div id="usersList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
